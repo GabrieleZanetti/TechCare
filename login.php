@@ -26,7 +26,7 @@
             if($response['status'] == "success")
             {
                 $_SESSION["Auth"] = $response['user'];
-                relocator("home.php",$response['message']);
+                $_SESSION["Auth"]->getRole() == "Admin" ? relocator("console.php",$response['message']): relocator("home.php",$response['message']);
             }
         }
     }

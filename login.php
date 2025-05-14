@@ -8,6 +8,9 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+
+        exist($_POST,"back") ? relocator("index.php",null) : null;
+
         if(exist($_POST,"login"))
         {
             check();
@@ -50,6 +53,10 @@
         Username: <input type="text" name="username" required><br>
         Password: <input type="password" name="password" required><br>
         <button name="login" value="true">Login</button>
+    </form>
+
+    <form action="login.php" method="post">
+        <button name="back" value="true">Torna alla prima pagina!</button>
     </form>
 </body>
 </html>
